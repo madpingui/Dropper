@@ -21,11 +21,11 @@ public class PlayerMovement : MonoBehaviour
             var touch = Input.GetTouch(0);
             if (touch.position.x < Screen.width / 2)
             {
-                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+                rb.linearVelocity = new Vector2(-moveSpeed, rb.linearVelocity.y);
             }
             else if (touch.position.x > Screen.width / 2)
             {
-                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
             }
         }
 
@@ -33,18 +33,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.mousePosition.x < Screen.width / 2)
             {
-                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+                rb.linearVelocity = new Vector2(-moveSpeed, rb.linearVelocity.y);
             }
             else if (Input.mousePosition.x > Screen.width / 2)
             {
-                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
             }
         }
     }
 
     public void PlatformMove (float x)
     {
-        rb.velocity = new Vector2(x, rb.velocity.y);
+        rb.linearVelocity = new Vector2(x, rb.linearVelocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
